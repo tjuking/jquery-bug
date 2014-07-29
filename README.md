@@ -8,3 +8,4 @@ jQuery问题研究
 - 在IE8-浏览器中`.isFunction(obj)`无法判断DOM相关操作方法或类似于`alert()`这样的方法（由于这些浏览器将这些方法在应用`Object.prototype.toString(obj)`时返回值不为`[object Function]`）
 - `.inArray(array, elem)`的函数命名有歧义，容易让人理解返回值为`true`或`false`
 - `jQuery.proxy`的两种参数类型不符合一致性原则（`proxy(function, context)`、`proxy(context, name)`），具有记忆成本，且程序内部处理逻辑也不方便
+- `.data(key, value)`会对key进行驼峰转换，所以`.data("hi-test", "1")`与`.data("hiTest", "2")`会产生覆盖冲突
